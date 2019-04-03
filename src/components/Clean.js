@@ -1,20 +1,28 @@
 import React from "react";
-const cheerio = require("cheerio");
 
 const Clean = props => {
   return (
-    <div>
-      <div class="chapter" data-chapter-number={props.bookDetail.chapterNum}>
-        <div class="chapter-start">
-          <div class="ch-head">
+    <div id="reeedr-body">
+      <div
+        className="chapter"
+        data-chapter-number={props.bookDetail.chapterNum}
+      >
+        <div className="chapter-start">
+          <div className="ch-head">
             {" "}
             Chapter{" "}
-            <span class="chapter-number">{props.bookDetail.chapterNum}</span>
+            <span className="chapter-number">
+              {props.bookDetail.chapterNum}
+            </span>
           </div>
-          <h1 class="chaptertitle">{props.bookDetail.chapterName}</h1>
-          <h3 class="author">{props.bookDetail.author}</h3>
+          <h1 className="chaptertitle">{props.bookDetail.chapterName}</h1>
+          <h3 className="author">{props.bookDetail.author}</h3>
         </div>
-        <div dangerouslySetInnerHTML={{ __html: props.bookDetail.html }} />
+        <div
+          contenteditable="true"
+          className=""
+          dangerouslySetInnerHTML={{ __html: props.bookDetail.html }}
+        />
         <div className="next-chapter-wrapper">
           <a
             className="next-chapter-button"
@@ -22,10 +30,10 @@ const Clean = props => {
           >
             <span>NEXT :</span>
             {props.bookDetail.nextChapterName}
-            <i class="fas fa-chevron-right" />
+            <i className="fas fa-chevron-right" />
           </a>
         </div>
-        <div class="chapter-end" />
+        <div className="chapter-end" />
       </div>
     </div>
   );

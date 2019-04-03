@@ -3,11 +3,17 @@ import { htmlCleanup } from "../helper";
 import styled from "styled-components";
 
 const FormStyled = styled.form`
+  width: 40%;
+  margin-top: 2%;
   label {
     display: block;
   }
+  input {
+    width: 80%;
+    height: 20px;
+  }
   textarea {
-    width: 50%;
+    width: 80%;
     height: 50vh;
   }
 `;
