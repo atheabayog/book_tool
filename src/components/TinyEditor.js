@@ -12,10 +12,12 @@ class TinyEditor extends Component {
     return (
       <TinyEditorWrapper>
         <Editor
+          apiKey="w12jxn9vfvgq3tvrfh92jetlgkmu0orc8cgn3r9daz7sq8i9"
           value={this.props.html}
           // initialValue={`<p>Generate HTML</p>`}
           init={{
-            plugins: "link image code",
+            height: "100%",
+            plugins: "link image advcode",
             toolbar:
               "undo redo | bold italic | alignleft aligncenter alignright | code"
           }}

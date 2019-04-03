@@ -16,6 +16,14 @@ const FormStyled = styled.form`
     width: 80%;
     height: 50vh;
   }
+  button {
+    background: #fa3292;
+    border: none;
+    padding: 10px;
+    color: #fefefe;
+    font-weight: 600;
+    font-size: 16px;
+  }
 `;
 
 class Forms extends React.Component {
@@ -61,7 +69,7 @@ class Forms extends React.Component {
           <label for="content">Content</label>
           <textarea name="content" />
         </p>
-        <button>Generate</button>
+        <button>Clean My HTML</button>
       </FormStyled>
     );
   }

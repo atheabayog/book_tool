@@ -29,6 +29,47 @@ class App extends Component {
     console.log("Content was updated:", e.target.getContent());
   };
 
+  addChapterStyles = (
+    html,
+    chapterName,
+    chapterNum,
+    author,
+    nextChapterName
+  ) => {
+    return `
+    <div id="reeedr-body">
+        <div
+        class="chapter"
+          data-chapter-number=${chapterNum}
+        >
+          <div class="chapter-start">
+            <div class="ch-head">
+              Chapter
+              <span class="chapter-number">
+                ${chapterNum}
+              </span>
+            </div>
+            <h1 class="chaptertitle">${chapterName}</h1>
+            <h3 class="author">${author}</h3>
+          </div>
+          <div>${html}</div>
+          />}
+          <div class="next-chapter-wrapper">
+            <a
+              class="next-chapter-button"
+              data-next-chapter=${parseInt(chapterNum) + 1}
+            >
+              <span>NEXT :</span>
+              ${nextChapterName}
+              <i class="fas fa-chevron-right" />
+            </a>
+          </div>
+          <div class="chapter-end" />
+        </div>
+      </div>
+    `;
+  };
+
   render() {
     return (
       <div className="App">
