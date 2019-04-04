@@ -52,7 +52,7 @@ class App extends Component {
             <h1 class="chaptertitle">${chapterName}</h1>
             <h3 class="author">${author}</h3>
           </div>
-          <div>${html}</div>
+          ${html}
           />}
           <div class="next-chapter-wrapper">
             <a
@@ -71,13 +71,14 @@ class App extends Component {
   };
 
   render() {
+    console.log(this.state);
     return (
       <div className="App">
         <Title version="1.0.0v" />
         <FormsBox>
           <Forms setChapterInfo={this.setChapterInfo} />
           <TinyEditor
-            html={this.state.html}
+            state={this.state}
             handleEditorChange={this.handleEditorChange}
           />
         </FormsBox>

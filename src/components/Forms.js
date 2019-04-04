@@ -7,22 +7,32 @@ const FormStyled = styled.form`
   margin-top: 2%;
   label {
     display: block;
+    margin-bottom: 5px;
+    font-weight: 700;
   }
   input {
     width: 80%;
-    height: 20px;
+    height: 25px;
+    border: solid 1px #000;
+    padding-left: 10px;
   }
   textarea {
     width: 80%;
-    height: 50vh;
+    height: 40vh;
   }
   button {
     background: #fa3292;
+    border-color: #fa3292;
     border: none;
     padding: 10px;
     color: #fefefe;
     font-weight: 600;
     font-size: 16px;
+    cursor: pointer;
+    &:hover {
+      background-color: #fa0b7e;
+      border-color: #fa0b7e;
+    }
   }
 `;
 

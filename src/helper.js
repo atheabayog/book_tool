@@ -129,10 +129,10 @@ export function htmlCleanup(content) {
   $("img").addClass("lazyload");
 
   // Add code tag to all pre tags
-  // const addPre = $("<pre></pre>");
+  const addPre = $("<pre></pre>");
 
-  // $("pre").each((i, item) => (item.tagName = "code"));
-  // $("code").wrap(addPre);
+  $("pre").each((i, item) => (item.tagName = "code"));
+  $("code").wrap(addPre);
 
   // Add tip styling to tip
 

@@ -9,15 +9,45 @@ const TinyEditorWrapper = styled.div`
 
 class TinyEditor extends Component {
   render() {
+    // console.log(addChapterStyles(...this.props.html));
     return (
       <TinyEditorWrapper>
         <Editor
           apiKey="w12jxn9vfvgq3tvrfh92jetlgkmu0orc8cgn3r9daz7sq8i9"
-          value={this.props.html}
+          value={`<div id="reeedr-body">
+          <div
+          class="chapter"
+            data-chapter-number=${this.props.state.chapterNum}
+          >
+            <div class="chapter-start">
+              <div class="ch-head">
+                Chapter
+                <span class="chapter-number">
+                  ${this.props.state.chapterNum}
+                </span>
+              </div>
+              <h1 class="chaptertitle">${this.props.state.chapterName}</h1>
+              <h3 class="author">${this.props.state.author}</h3>
+            </div>
+            ${this.props.state.html}
+            />}
+            <div class="next-chapter-wrapper">
+              <a
+                class="next-chapter-button"
+                data-next-chapter=${parseInt(this.props.state.chapterNum) + 1}
+              >
+                <span>NEXT :</span>
+                ${this.props.state.nextChapterName}
+                <i class="fas fa-chevron-right" />
+              </a>
+            </div>
+            <div class="chapter-end" />
+          </div>
+        </div>`}
           // initialValue={`<p>Generate HTML</p>`}
           init={{
             height: "100%",
-            plugins: "link image advcode",
+            plugins: "link image advcode codesample",
             toolbar:
               "undo redo | bold italic | alignleft aligncenter alignright | code"
           }}
